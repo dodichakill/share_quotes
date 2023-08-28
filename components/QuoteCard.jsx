@@ -10,9 +10,10 @@ export default function QuoteCard({
   handleDelete,
 }) {
   const [copied, setCopied] = useState("");
+  const [showFull, setShowFull] = useState(false);
   const { data: session } = useSession();
   const pathName = usePathname();
-  const router = useRouter();
+  // const router = useRouter();
 
   const handleCopy = () => {
     setCopied(post.quote);
@@ -21,6 +22,30 @@ export default function QuoteCard({
       setCopied("");
     }, 3000);
   };
+
+  const showQuote = () => {
+    const plainQuote = post.quote;
+    let resultQuote = "";
+
+    if (plainQuote.length > 200) {
+      resultQuote = plainQuote.substring(0, 200) + "...";
+    }
+
+    return (
+      <>
+        {plainQuote.length > 200 && !showFull ? resultQuote : plainQuote}
+        {plainQuote.length > 200 && (
+          <button
+            onClick={() => setShowFull(!showFull)}
+            className="block text-blue-400 mt-2"
+          >
+            {showFull ? "lihat singkatnya" : "lihat selengkapnya"}
+          </button>
+        )}
+      </>
+    );
+  };
+
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
@@ -54,7 +79,7 @@ export default function QuoteCard({
           />
         </div>
       </div>
-      <p className="my-4 font-satoshi text-sm text-gray-700">{post.quote}</p>
+      <p className="my-4 font-satoshi text-sm text-gray-700">{showQuote()}</p>
       <p
         className="font-inter text-sm blue_gradient cursor-pointer"
         onClick={() => handleTagClick && handleTagClick}

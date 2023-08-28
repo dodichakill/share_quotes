@@ -118,8 +118,12 @@
 }
 
 .prompt_layout {
-  @apply grid grid-cols-3 gap-y-5 w-full py-8;
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-5 gap-x-5 w-full mb-10;
 }
+
+/* .prompt_layout {
+  @apply flex justify-center flex-wrap gap-y-5 gap-x-5 w-full;
+} */
 
 /* Feed Component */
 .feed {
@@ -150,7 +154,7 @@
 
 /* PromptCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full max-w-[22rem] h-fit;
 }
 
 .flex-center {

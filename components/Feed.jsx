@@ -47,7 +47,7 @@ export default function Feed() {
 
       setResultDataPost(filteredPosts);
     } else {
-      fetchPosts();
+      setResultDataPost(plainDataPost);
     }
   }, [searchText]);
 
@@ -57,11 +57,11 @@ export default function Feed() {
 
   return (
     <section className="feed">
-      <form className="relative w-full flex-center">
+      <form className="relative w-full max-w-xl flex-center">
         <input
           type="text"
           className="search_input peer"
-          placeholder="cari sebuah tag / username"
+          placeholder="cari quote berdasarkan tag, username, isi di sini..."
           value={searchText}
           onChange={handleSearchChange}
           required
