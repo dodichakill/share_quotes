@@ -51,12 +51,14 @@ export default function UpdateQuote() {
     }
   };
   return (
-    <Form
-      type="Edit"
-      post={post}
-      setPost={setPost}
-      submitting={submitting}
-      handleSubmit={handleUpdateQuote}
-    />
+    <>
+      <Form
+        type="Edit"
+        post={post}
+        setPost={setPost}
+        submitting={submitting}
+        handleSubmit={handleUpdateQuote}
+      />
+    </>
   );
 }

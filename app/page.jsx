@@ -9,8 +9,8 @@ export default function Home() {
         <span className="orange_gradient">Quotes Terbaikmu</span>
       </h1>
       <p className="desc text-center">
-        MyQuotes adalah website yang menyajikan quotes terbaik untuk membuat
-        hari-harimu lebih bersemangat dan termotivasi
+        MyQuotes adalah platform berbagi Quote / kutipan inspiratif berbasis
+        Opensource untuk saling berbagi semangat, motivasi, dan inspirasi.
       </p>
 
       <Feed />
